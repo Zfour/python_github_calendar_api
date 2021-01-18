@@ -29,10 +29,9 @@ def getdata(name):
 class handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
-        name = self.headers.get('Location').encode()
-
+        name = self.headers
         self.send_response(200)
-        self.send_header('Content-type','application/json')
+        self.send_header('Content-type','text/plain')
         self.end_headers()
         self.wfile.write(json.dumps(name).encode('utf-8'))
         return
