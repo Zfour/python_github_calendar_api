@@ -29,9 +29,9 @@ def getdata(name):
 class handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
-        name = self.headers.get('path')
+        path = self.path
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
-        self.wfile.write(name.encode('utf-8'))
+        self.wfile.write(path.encode('utf-8'))
         return
