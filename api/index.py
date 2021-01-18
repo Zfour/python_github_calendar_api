@@ -4,6 +4,10 @@ import re
 from http.server import BaseHTTPRequestHandler
 import json
 
+def list_split(items, n):
+    return [items[i:i+n] for i in range(0, len(items), n)]
+
+
 def getdata(name):
     gitpage = requests.get("https://github.com/" +name)
     data = gitpage.text
@@ -17,13 +21,12 @@ def getdata(name):
     for index,item in enumerate(datadate):
         itemlist = {"date":item,"count":datacount[index]}
         datalist.append(itemlist)
+    datalistsplit = list_split(datalist, 7)
     returndata = {
         "tatal":contributions,
-        "contributions":[
-            datalist
-      ]
-
+        "contributions":datalistsplit
     }
+
     return returndata
 
 class handler(BaseHTTPRequestHandler):
