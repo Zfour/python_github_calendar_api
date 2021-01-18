@@ -30,8 +30,7 @@ class handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         path = self.path
-        pathreg = re.compile(r'/api?(.*?)')
-        user = pathreg.findall(path)[0]
+        user = path.split('?')[1]
         data = getdata(user)
         self.send_response(200)
         self.send_header('Content-type','application/json')
