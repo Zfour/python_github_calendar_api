@@ -23,7 +23,7 @@ def getdata(name):
         datalist.append(itemlist)
     datalistsplit = list_split(datalist, 7)
     returndata = {
-        "tatal":contributions,
+        "total":contributions,
         "contributions":datalistsplit
     }
 
