@@ -9,7 +9,7 @@ def list_split(items, n):
 def getdata(name):
     gitpage = requests.get("https://github.com/" + name)
     data = gitpage.text
-    datadatereg = re.compile(r'data-date="(.*?)"/>')
+    datadatereg = re.compile(r'data-date="(.*?)" data-level')
     datacountreg = re.compile(r'data-count="(.*?)" data-date')
     datadate = datadatereg.findall(data)
     datacount = datacountreg.findall(data)
