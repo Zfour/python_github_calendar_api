@@ -1,7 +1,76 @@
-<h1>这里引用了akilar的部署教程</h1>
-<h2>  （作者太懒了连部署方法都不愿意写）</h2>
-<a href="https://akilar.top/posts/1f9c68c9/">详情请查看akilar的部署教程</a>
+## 2.如果你想部署自用的vercel api
 
-___
+### ①注册
 
-<details cyan="" open=""><summary>点击查看自建 API 部署</summary><div class="content"><div class="note info flat"><p>虽然 Vercel 的访问应当没有次数限制，但是不排除存在因访问次数过多而限流等限制。所以还是建议各位自建 API。使用 Vercel 部署，完全免费。且无需服务器。<br><a class="ghcard" rel="external nofollow noopener noreferrer noopener" target="_blank" href="https://github.com/Zfour/python_github_calendar_api"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Zfour&amp;repo=python_github_calendar_api&amp;show_owner=true" data-lazy-src="https://github-readme-stats.vercel.app/api/pin/?username=Zfour&amp;repo=python_github_calendar_api&amp;show_owner=true" data-ll-status="loaded" class="entered loaded"><div class="img-alt is-center"></div></a><br>以下是具体部署教程。与部署静态网站基本一致。因此配图沿用了站内教程<a href="/posts/812734f8/" data-pjax-state="">使用 Vercel 来加速 Hexo 博客</a>的内容。</p></div><ol><li>访问 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://vercel.com/">Vercel 官网</a>，点击右上角的 sign up 进行注册<br><img src="https://cdn.jsdelivr.net/gh/Akilarlxh/Picgo@v2.3/smms/ZE6fCxIUJ7GLAeO.png" data-lazy-src="https://cdn.jsdelivr.net/gh/Akilarlxh/Picgo@v2.3/smms/ZE6fCxIUJ7GLAeO.png" alt="" class="medium-zoom-image entered loaded" data-ll-status="loaded"><div class="img-alt is-center"></div><div class="hide-toggle"><div class="hide-button toggle-title"><i class="fas fa-caret-right fa-fw"></i><span>极有可能遇到的 bug</span></div><div class="hide-content"><div class="note danger flat"><p>若注册时提示 <code>Error:This user account is blocked.Contact support@vercel.com for more information.</code><br><img src="https://cdn.jsdelivr.net/gh/Akilarlxh/akilarlxh.github.io@v2.1/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/Akilarlxh/Picgo@v2.3/smms/MBux7INqjZQigTW.png" alt="" class="medium-zoom-image"><div class="img-alt is-center"></div></p></div><div class="note success flat"><p>这是由于 <code>Vercel</code> 不支持大部分国内邮箱。可以将 <code>github</code> 账号主邮箱改为 <code>Gmail</code> 邮箱。<br><strong>但是</strong>根据群友反应，将 <code>github</code> 账号主邮箱切换为 <code>Gmail</code> 以后，<code>Vercel</code> 又会提示需要使用手机号码验证。然而 <code>github</code> 并没有提供手机号码绑定的内容。<br>综上，建议一开始注册 <code>github</code> 账号时就使用 <code>Gmail</code> 等国外邮箱进行注册。</p></div><div class="note primary flat"><ol><li>国内访问 <code>Gmail</code> 的方案：<ul><li>直接使用 QQ 邮箱手机版，它提供 <code>Gmail</code> 的访问路线，可以直接注册并使用。</li><li>使用 <code>Ghelper</code> 等浏览器插件访问。详情可以参考这篇文章：<a href="/posts/8c8df126/" data-pjax-state="">玩转 Microsoft-Edge</a></li></ul></li><li> 若是执着于当前 <code>Github</code> 账号，可以参考以下方案进行尝试:<ul><li> 完成了 <code>Gmail</code> 等国外邮箱的注册，打开 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/settings/emails">github-&gt; 头像 -&gt;settings-&gt;Emails</a>-&gt;<kbd>Add email address</kbd>, 并完成邮箱验证。</li><li>在<kbd> Add email address</kbd> 下方的<kbd> Primary email address</kbd> 选项中将 <code>Gmail</code> 设置为主邮箱。</li></ul></li></ol></div></div></div></li><li><p>注册完成后选择新建一个项目<br><img src="https://cdn.jsdelivr.net/gh/Akilarlxh/Picgo@v2.3/smms/QHS5IuBfa4vwhFP.png" data-lazy-src="https://cdn.jsdelivr.net/gh/Akilarlxh/Picgo@v2.3/smms/QHS5IuBfa4vwhFP.png" alt="" class="medium-zoom-image entered loaded" data-ll-status="loaded"><div class="img-alt is-center"></div></p></li><li><p>填入 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://zfe.space">@冰老师</a>提供的自建 API 项目地址</p><figure class="highlight bash"><div class="highlight-tools closed"><i class="fas fa-angle-down expand closed"></i><div class="code-lang">bash</div><div class="copy-notice"></div><i class="fas fa-paste copy-button"></i></div><table><tbody><tr><td class="code"><pre><span class="line">https://github.com/Zfour/python_github_calendar_api.git</span><br></pre></td></tr></tbody></table></figure><p><img src="https://cdn.jsdelivr.net/gh/Akilarlxh/Picgo@v2.3/smms/uXmO1Jwpo6gdGKa.png" data-lazy-src="https://cdn.jsdelivr.net/gh/Akilarlxh/Picgo@v2.3/smms/uXmO1Jwpo6gdGKa.png" alt="" class="medium-zoom-image entered loaded" data-ll-status="loaded"><div class="img-alt is-center"></div><br>此时会提示这是否是你的仓库。<br><img src="https://cdn.jsdelivr.net/gh/Akilarlxh/Picgo@v2.3/smms/6LY7QrE54IboU3W.png" data-lazy-src="https://cdn.jsdelivr.net/gh/Akilarlxh/Picgo@v2.3/smms/6LY7QrE54IboU3W.png" alt="" class="medium-zoom-image entered loaded" data-ll-status="loaded"><div class="img-alt is-center"></div><br>选 <code>No</code>，<code>Vercel</code> 会自动帮你 <code>fork</code> 这个仓库到你的 <code>Github</code> 账号里。</p></li><li><p>导入静态页面仓库之前，需要为你的 <code>Github</code> 安装 <code>Vercel</code>，此处建议选择 <code>All repositories</code>，意为为所有仓库安装，当然，你也可以选择只为当前仓库安装，也就是 <code>Only select repositories</code>。<br></p><div class="note warning flat"><p>如果哪天反悔了，可以在 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/settings/installations">github-&gt; 头像 (右上角)-&gt;settings-&gt;Applications（列表下数上第四个）-&gt;</a>Installed Github Apps 里修改。</p></div><br><img src="https://cdn.jsdelivr.net/gh/Akilarlxh/Picgo@v2.3/smms/U9TJuLpoqbvatVj.png" data-lazy-src="https://cdn.jsdelivr.net/gh/Akilarlxh/Picgo@v2.3/smms/U9TJuLpoqbvatVj.png" alt="" class="medium-zoom-image entered loaded" data-ll-status="loaded"><div class="img-alt is-center"></div><p></p></li><li><p>之后会识别出项目文件，单击 <code>Continue</code><br><img src="https://cdn.jsdelivr.net/gh/Akilarlxh/Picgo@v2.3/smms/ZFkc675SjyvsRLh.png" data-lazy-src="https://cdn.jsdelivr.net/gh/Akilarlxh/Picgo@v2.3/smms/ZFkc675SjyvsRLh.png" alt="" class="medium-zoom-image entered loaded" data-ll-status="loaded"><div class="img-alt is-center"></div><br><code>Vercel</code> 的 <code>PROJECT NAME</code> 可以自定义，不用太过在意，但是之后不支持修改，若要改名，只能删除 <code>PROJECT</code> 以后重建一个了。下方三个选项保持默认就好。<br><img src="https://cdn.jsdelivr.net/gh/Akilarlxh/Picgo@v2.3/smms/8Kg67bw2edr5HYD.png" data-lazy-src="https://cdn.jsdelivr.net/gh/Akilarlxh/Picgo@v2.3/smms/8Kg67bw2edr5HYD.png" alt="" class="medium-zoom-image entered loaded" data-ll-status="loaded"><div class="img-alt is-center"></div></p></li><li><p>到此时，<code>Vercel</code> 的部署已经完成，可以使用 <code>Vercel</code> 提供的默认域名来访问 <code>api</code> 链接。例如我获取到的默认域名为 <code>github-calendar-api.vercel.app</code>, 则用它来替换冰老师教程中的自建 API，填写到 <code>[Blogroot]\_config.butterfly.yml</code> 中关于 <code>gitcalendar</code> 的 <code>apiurl</code> 中。注意不要带协议，不要带后缀。就填写给你的默认域名就好。</p><figure class="highlight diff"><div class="highlight-tools closed"><i class="fas fa-angle-down expand closed"></i><div class="code-lang">diff</div><div class="copy-notice"></div><i class="fas fa-paste copy-button"></i></div><table><tbody><tr><td class="code"><pre><span class="line">gitcalendar:</span><br><span class="line">  enable: true</span><br><span class="line">  simplemode: true</span><br><span class="line">  user: Akilarlxh</span><br><span class="line">  apiurl: github-calendar-api.vercel.app</span><br><span class="line">  color: "['#e4dfd7', '#f9f4dc', '#f7e8aa', '#f7e8aa', '#f8df72', '#fcd217', '#fcc515', '#f28e16', '#fb8b05', '#d85916', '#f43e06']"</span><br></pre></td></tr></tbody></table></figure></li></ol></div></details>
+首先前往 [Vercel 官网](https://vercel.com/)，点击右上角的 sign up 进行注册。
+
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8391485/1612880174758-059d6e22-d5ec-4478-9b8c-4a9d7c041f44.png)
+
+极有可能遇到的 bug
+
+若注册时提示 `Error:This user account is blocked.Contact support@vercel.com for more information.`
+
+这是由于 `Vercel` 不支持大部分国内邮箱。可以将 `github` 账号主邮箱改为 `Gmail` 邮箱。
+
+**但是**根据群友反应，将 `github` 账号主邮箱切换为 `Gmail` 以后，`Vercel` 又会提示需要使用手机号码验证。然而 `github` 并没有提供手机号码绑定的内容。
+
+综上，建议一开始注册 `github` 账号时就使用 `Gmail` 等国外邮箱进行注册。
+
+1. 国内访问`Gmail`的方案：
+
+- - 直接使用 QQ 邮箱手机版，它提供 `Gmail` 的访问路线，可以直接注册并使用。
+  - 使用 `Ghelper` 等浏览器插件访问。详情可以参考这篇文章：[玩转 Microsoft-Edge](https://github.com/Zfour/python_github_calendar_api/blob/master/posts/8c8df126)
+
+1. 若是执着于当前`Github`账号，可以参考以下方案进行尝试:
+
+- - 完成了 `Gmail` 等国外邮箱的注册，打开 [github-> 头像 ->settings->Emails](https://github.com/settings/emails)->Add email address, 并完成邮箱验证。
+  - 在Add email address 下方的Primary email address 选项中将 `Gmail` 设置为主邮箱。
+
+### ②新建项目，fork我的项目
+
+打开[dashboard](https://vercel.com/dashboard)点击新建项目的`New Project`按钮。点击导入第三方库。
+
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8391485/1612949541795-cfe67df4-a443-4604-86fd-a34ea9c34bed.png)
+
+
+
+填入俺提供的自建 API 项目地址:
+
+```
+https://github.com/Zfour/friends_link_list_api
+```
+
+
+
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8391485/1612949577842-18cc23f8-5cf6-4f72-b892-d244d22a3089.png)
+
+选择私有账户。点击`select`。
+
+
+
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8391485/1612949622863-54b72f81-9add-479d-94ed-aeb125099afe.png)
+
+选择github按钮然后会帮你将仓库克隆到你的github中，填入自定义仓库名称。
+
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8391485/1612949755226-a97f3c75-8328-4630-91f2-2dd9dddf3665.png)
+
+之后会识别出项目文件，单击 `Continue`。
+
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8391485/1612949831064-f4b2cef1-eb64-4bac-8841-b991768ffee8.png)
+
+`Vercel` 的 `PROJECT NAME` 可以自定义，不用太过在意，但是之后不支持修改，若要改名，只能删除 `PROJECT` 以后重建一个了。下方三个选项保持默认就好。 
+
+
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8391485/1612949883724-064103a2-658f-49cb-b1e6-f3a7f0a511d1.png)
+
+
+
+此时点击Deploy，`Vercel` 的api部署已经完成。
+
+### ④检查API是否配置成功
+
+访问**API链接**（图中链接+'/api'+查询参数）,如我的为
+
+https://python-github-calendar-api-zfour.vercel.app/api/?zfour
+
+如果显示数据则说明API配置成功。
