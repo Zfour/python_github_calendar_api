@@ -1,3 +1,9 @@
+#2022.9.4 公共域名墙了#
+
+可以先使用https://gitcalendar.zfe.space/api
+或者使用vecel的自定义域名绑定
+![image](https://user-images.githubusercontent.com/19563906/188314849-5fa779e6-3575-4acb-a019-ff28faeb8475.png)
+
 ## 如果你想部署自用的vercel api
 
 ### ①注册
