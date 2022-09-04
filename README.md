@@ -3,6 +3,7 @@
 可以先使用https://gitcalendar.zfe.space/api
 或者使用vecel的自定义域名绑定
 ![image](https://user-images.githubusercontent.com/19563906/188314849-5fa779e6-3575-4acb-a019-ff28faeb8475.png)
+![image](https://user-images.githubusercontent.com/19563906/188315154-bd813a17-3a12-4320-939d-410fbc81978c.png)
 
 ## 如果你想部署自用的vercel api
 
