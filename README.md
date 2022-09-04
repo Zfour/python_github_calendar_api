@@ -1,4 +1,4 @@
-#2022.9.4 公共域名墙了#
+# 2022.9.4 公共域名墙了#
 
 可以先使用https://gitcalendar.zfe.space/api
 或者使用vecel的自定义域名绑定
