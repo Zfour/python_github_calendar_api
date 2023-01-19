@@ -6,14 +6,19 @@ import json
 
 def list_split(items, n):
     return [items[i:i + n] for i in range(0, len(items), n)]
+def no_to_0(x):
+    return int(x) if x.isdigit() else 0
 def getdata(name):
     gitpage = requests.get("https://github.com/" + name)
     data = gitpage.text
+    print(data)
     datadatereg = re.compile(r'data-date="(.*?)" data-level')
-    datacountreg = re.compile(r'data-count="(.*?)" data-date')
+    datacountreg = re.compile(r'\">(.*?) contribution')
     datadate = datadatereg.findall(data)
     datacount = datacountreg.findall(data)
-    datacount = list(map(int, datacount))
+    print(datacount)
+    datacount = list(map(no_to_0, datacount))
+    print(datacount,datadate,len(datacount),len(datadate))
     contributions = sum(datacount)
     datalist = []
     for index, item in enumerate(datadate):
