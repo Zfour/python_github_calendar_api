@@ -10,10 +10,15 @@ def getdata(name):
     gitpage = requests.get("https://github.com/" + name)
     data = gitpage.text
     datadatereg = re.compile(r'data-date="(.*?)" data-level')
-    datacountreg = re.compile(r'data-count="(.*?)" data-date')
+    datacountreg = re.compile(r'<span class="sr-only">(.*?) contribution')
     datadate = datadatereg.findall(data)
     datacount = datacountreg.findall(data)
-    datacount = list(map(int, datacount))
+    datacount = list(map(int, [0 if i == "No" else i for i in datacount]))
+
+    # 将datadate和datacount按照字典序排序
+    sorted_data = sorted(zip(datadate, datacount))
+    datadate, datacount = zip(*sorted_data)
+    
     contributions = sum(datacount)
     datalist = []
     for index, item in enumerate(datadate):
