@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 import requests
 import re
 from http.server import BaseHTTPRequestHandler
@@ -9,8 +8,8 @@ def list_split(items, n):
 def getdata(name):
     gitpage = requests.get("https://github.com/" + name)
     data = gitpage.text
-    datadatereg = re.compile(r'data-date="(.*?)" data-level')
-    datacountreg = re.compile(r'<span class="sr-only">(.*?) contribution')
+    datadatereg = re.compile(r'data-date="(.*?)" id="contribution-day-component')
+    datacountreg = re.compile(r'position-absolute">(.*?) contribution')
     datadate = datadatereg.findall(data)
     datacount = datacountreg.findall(data)
     datacount = list(map(int, [0 if i == "No" else i for i in datacount]))
@@ -33,7 +32,7 @@ def getdata(name):
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         path = self.path
-        user = path.split('?')[1]
+        user = path.split('?')[1][:-1]
         data = getdata(user)
         self.send_response(200)
         self.send_header('Access-Control-Allow-Origin', '*')
